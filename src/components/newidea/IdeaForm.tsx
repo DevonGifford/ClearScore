@@ -7,7 +7,7 @@ import { Wand2 } from "lucide-react";
 import generateIdeas from "@/lib/FakeGenerate";
 
 export const formSchema = z.object({
-  title: z.string().min(1, "Title is required"),
+  title: z.string().min(1, "Title is required").max(40, "Keep Titles short and concise"),
   description: z
     .string()
     .min(1, "Description is required")
