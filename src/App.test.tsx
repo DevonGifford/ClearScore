@@ -2,8 +2,8 @@ import { describe, test, expect } from "vitest";
 import { screen, render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import App from "../App.tsx";
-import { multipleMockIdeas, singleMockIdea } from "./utils/TestIdeaData.ts";
+import App from "./App.tsx";
+import { multipleMockIdeas, singleMockIdea } from "./__tests__/utils/TestIdeaData.ts";
 
 describe("Testing the 'Create' Idea functionality", () => {
   test("Creating new idea via Modal", async () => {

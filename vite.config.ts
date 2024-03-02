@@ -8,7 +8,10 @@ export default defineConfig({
     reporters: ["html", "default"],
     globals: true,
     environment: "happy-dom",
-    setupFiles: ["src/setupTest.ts"],
+    setupFiles: ["src/__tests__/utils/setupTest.ts"],
+    coverage: {
+      provider: 'v8'
+    }
   },
   resolve: {
     alias: {
