@@ -123,7 +123,7 @@ const IdeaCard: React.FC<CardProps> = ({
               {charCount !== 0 ? (
                 <span>{140 - charCount}</span>
               ) : (
-                <span>{140 - description.length}</span>
+                <span>0</span>
               )}
             </div>
           </div>
