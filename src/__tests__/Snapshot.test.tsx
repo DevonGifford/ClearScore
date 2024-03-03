@@ -4,12 +4,8 @@ import { render } from "@testing-library/react";
 
 import App from "../App.tsx";
 
-localStorage.clear();
-
-test("should render initial page", async () => {
-  const ui = await App();
-
-  render(ui);
-
+test("single demo snapshot test - renders app in default state", async () => {
+  localStorage.clear();
+  const ui = render(<App />);
   expect(ui).toMatchSnapshot();
 });
