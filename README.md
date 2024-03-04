@@ -36,7 +36,7 @@ The project meets all core and stretch requirements, including responsive design
 
 <!-- DEMO IMAGE  -->
 <div align=center>
-    <img src="./src/assets/ideaboard_demo_mobile.png" alt="Demo-Mobile-View" title="Demo-Image-Mobile" width="150" height="250">    
+    <img src="./src/assets/ideaboard_demo_mobile.png" alt="Demo-Mobile-View" title="Demo-Image-Mobile" width="150" height="235">    
     <img src="./src/assets/ideaboard_demo_desktop.png" alt="Demo-Desktop-View" title="Demo-Image-Desktop" width="400" height="250"> 
 </div>
 <br>
@@ -113,13 +113,14 @@ _This App Uses Vite and Thus Utilizes Vite's Own Builder._
 
 ---
 
-<div align=center>
-    <img src="./src/assets/ideaboard_demo_tests.png" alt="Demo" title="DemoImage" width="600" height="900">     
-</div>
-
 > [!WARNING] 
 > **Note on Testing;** <br/>
 > Since ShadCN components are already extensively tested within the library itself, they do not need to be individually tested in this project.
+
+<div align=center>
+    <img src="./src/assets/ideaboard_demo_tests.png" alt="Demo" title="DemoImage" width="650" height="600">     
+</div>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
