@@ -1,7 +1,4 @@
-<!-- Introduction Text -->
-
 <a name="readme-top"></a>
-
 <div align="center">
   <h2>Take-Home Assessment</h2>
   <h4>Responsive Frontend React Idea Board with Local Storage Persistance<h4>
@@ -11,9 +8,9 @@
     <a/>
   </h3>
   <p align="center">
-    <a href="https://github.com/willdelorm/assessment-clearscore/issues">Report Bug</a>
+    <a href="https://github.com/DevonGifford/ClearScore/issues">Report Bug</a>
     &nbsp;·&nbsp;
-    <a href="https://github.com/willdelorm/assessment-clearscore/issues">Request Feature</a>
+    <a href="https://github.com/DevonGifford/ClearScore/issues">Request Feature</a>
     </p>
 </div>
 
@@ -28,24 +25,25 @@ Tech Used in this Project:
 
 ---
 
-This project resulted from a time-constrained frontend assessment for ClearScore, completed within 6 to 8 hours. Utilizing modern technologies like Tailwind and ShadCN UI Library for rapid development. I prioritized simplicity, accessibility, and thorough testing.
+This project was created as part of a time-constrained frontend assessment for ClearScore. Developed within 6 to 8 hours, it utilizes modern technologies like Tailwind CSS and ShadCN UI Library for rapid development. Prioritized simplicity, accessibility, and thorough testing.
 
-Meeting all given core and stretch requirements, such as responsive design, sorting options, and character countdown, this project also reached the stretch goals. Additionally, I implemented some additional features, including dark/light themes, new-idea modals with quick generation of mock ideas to enhance the reviewers experience.
+The project meets all core and stretch requirements, including responsive design, sorting options, and character countdown. Additionally, it implements extra features such as dark/light themes and new-idea modals with quick generation of mock ideas.
 
 > [!NOTE] 
 > **For reviewers:** <br/>
->
-> - Please feel free to disregard boilerplate ShadCN code in components/ui
+> - Please feel free to disregard boilerplate ShadCN code in `components/ui`
 > - You can find known issues and potential future enhancements [here](https://github.com/DevonGifford/Menu--TechnicalAssignment#-known-issues--potential-improvements--).
 
 <!-- DEMO IMAGE  -->
 <div align=center>
-    <img src="TODO🎯" alt="Demo-Mobile-View" title="Demo-Image-Mobile" width="150" height="250">    
-    <img src="TODO🎯" alt="Demo-Desktop-View" title="Demo-Image-Desktop" width="400" height="250"> 
+    <img src="./src/assets/ideaboard_demo_mobile.png" alt="Demo-Mobile-View" title="Demo-Image-Mobile" width="150" height="250">    
+    <img src="./src/assets/ideaboard_demo_desktop.png" alt="Demo-Desktop-View" title="Demo-Image-Desktop" width="400" height="250"> 
 </div>
 <br>
 
 ### 🔑 Assessment Requirements:
+
+---
 
 ✔ Fully Responsive Page.
 
@@ -101,27 +99,26 @@ Meeting all given core and stretch requirements, such as responsive design, sort
 
 ✔ Testing with modern tooling (RTL etc.)
 
-❌ MEN (Mongo, Express, Node) Stack Websites.
+❌ MEN (Mongo, Express, Node) Stack Websites. <br/>
 _This is a Frontend Assessment and Doesn't Require a Dedicated Backend or Database._
 
-❌ We Build Using the Webpack Module Bundler and Lerna Package Manager.
+❌ We Build Using the Webpack Module Bundler and Lerna Package Manager. <br/>
 _This App Uses Vite and Thus Utilizes Vite's Own Builder._
+
 <br/>
 
 <!-- -------------------------------------------------------------------------- -->
 
 ### 🧪 Test Coverage:
 
-<hr/>
-<!-- -------------------------------------------------------------------------- -->
+---
 
 <div align=center>
-    <img src="TODO🎯" alt="Demo" title="DemoImage" width="600" height="900">     
+    <img src="./src/assets/ideaboard_demo_tests.png" alt="Demo" title="DemoImage" width="600" height="900">     
 </div>
 
 > [!WARNING] 
-> **Note on Coverage;** <br/>
->
+> **Note on Testing;** <br/>
 > Since ShadCN components are already extensively tested within the library itself, they do not need to be individually tested in this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
