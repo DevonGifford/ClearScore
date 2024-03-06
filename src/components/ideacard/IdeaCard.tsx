@@ -46,7 +46,7 @@ const IdeaCard: React.FC<CardProps> = ({
 
   return (
     <article className=" h-90 min-h-fit w-64 px-3 py-2 border-b border-primary/10 bg-secondary transition duration-400 hover:scale-105 flex flex-col rounded-lg">
-      <div className="w-full flex justify-between items-center">
+      <header className="w-full flex justify-between items-center">
         <div
           role="time-stamp"
           className="text-xs font-semibold italic text-gray-500"
@@ -65,7 +65,7 @@ const IdeaCard: React.FC<CardProps> = ({
             <Trash2 size={14} />
           </Button>
         </div>
-      </div>
+      </header>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -110,39 +110,39 @@ const IdeaCard: React.FC<CardProps> = ({
         </div>
 
         {isEditing && (
-          <div>
-            <Progress
-              role="progress-bar"
-              className=" w-full"
-              value={(charCount / 140) * 100}
-            />{" "}
-            <div
-              role="char-countdown"
-              className="flex justify-end text-xs font-bold text-gray-500"
-            >
-              {charCount !== 0 ? (
-                <span>{140 - charCount}</span>
-              ) : (
-                <span>0</span>
-              )}
+          <>
+            <div>
+              <Progress
+                role="progress-bar"
+                className=" w-full"
+                value={(charCount / 140) * 100}
+              />{" "}
+              <div
+                role="char-countdown"
+                className="flex justify-end text-xs font-bold text-gray-500"
+              >
+                {charCount !== 0 ? (
+                  <span>{140 - charCount}</span>
+                ) : (
+                  <span>0</span>
+                )}
+              </div>
             </div>
-          </div>
-        )}
 
-        <div className="flex justify-center pt-1">
-          {isEditing && ( //- Only show the submit button if edits have been made
-            <Button
-              data-testid="submit-save-button"
-              role="button"
-              type="submit"
-              variant="premium"
-              className="w-32 justify-center"
-              disabled={isSubmitting || charCount > 140}
-            >
-              <span>Save Edit</span> <Wand2 className="w-4 h-4 ml-2" />
-            </Button>
-          )}
-        </div>
+            <div className="flex justify-center pt-1">
+              <Button
+                data-testid="submit-save-button"
+                role="button"
+                type="submit"
+                variant="premium"
+                className="w-32 justify-center"
+                disabled={isSubmitting || charCount > 140}
+              >
+                <span>Save Edit</span> <Wand2 className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </>
+        )}
       </form>
     </article>
   );

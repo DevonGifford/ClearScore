@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 <div align="center">
   <h2>Take-Home Assessment</h2>
-  <h4>Responsive Frontend React Idea Board with Local Storage Persistance<h4>
+  <h4>Responsive Frontend React Idea Board with Local Storage Persistence<h4>
   <h3> 
     <a href='https://idea-board-murex.vercel.app/', target='_blank'>
       <h5>live demo ↗</h5>
@@ -31,8 +31,9 @@ The project meets all core and stretch requirements, including responsive design
 
 > [!NOTE] 
 > **For reviewers:** <br/>
-> - Please feel free to disregard boilerplate ShadCN code in `components/ui`
-> - You can find known issues and potential future enhancements [here](https://github.com/DevonGifford/Menu--TechnicalAssignment#-known-issues--potential-improvements--).
+> - Please disregard boilerplate ShadCN code in `components/ui`, as it does not require review.
+> - For known issues and potential enhancements, please refer to this repos [github issues](https://github.com/DevonGifford/ClearScore/issues).
+> - Your constructive criticism and suggestions for improvements are welcome!
 
 <!-- DEMO IMAGE  -->
 <div align=center>
@@ -114,11 +115,12 @@ _This App Uses Vite and Thus Utilizes Vite's Own Builder._
 ---
 
 > [!WARNING] 
-> **Note on Testing;** <br/>
-> Since ShadCN components are already extensively tested within the library itself, they do not need to be individually tested in this project.
+> ShadCN components, including those in components/ui and components/theme, are thoroughly tested within the library itself. Consequently, there's no need for individual testing of these components in this project. All necessary coverage for these components is ensured through integration tests.
+> 
+> _The below image reflects the testing status as of the latest commit._
 
 <div align=center>
-    <img src="./src/assets/ideaboard_demo_tests.png" alt="Demo" title="DemoImage" width="650" height="600">     
+    <img src="./src/assets/ideaboard_test_coverage.png" alt="Demo" title="DemoImage" width="530" height="360">     
 </div>
 
 

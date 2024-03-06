@@ -10,8 +10,10 @@ export default defineConfig({
     environment: "happy-dom",
     setupFiles: ["src/__tests__/utils/setupTest.ts"],
     coverage: {
-      provider: 'v8'
-    }
+      include: ["src/**"],
+      exclude: ["src/main.tsx", "src/vite-env.d.ts"],
+      provider: "v8",
+    },
   },
   resolve: {
     alias: {

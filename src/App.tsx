@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { nanoid } from "nanoid";
 import toast from "react-hot-toast";
 import Navbar from "./components/navbar/Navbar";
 import IdeaCard from "./components/ideacard/IdeaCard";
@@ -12,34 +13,29 @@ type Idea = {
   edited: string;
 };
 
+type SortType = '' | 'date' | 'alph' | 'alph_rev';
+
 function App() {
-  const [sortType, setSortType] = useState<"" | "date" | "alph" | "alph_rev">(
-    ""
-  );
+  const [sortType, setSortType] = useState<SortType>("");
 
   const [ideas, setIdeas] = useState<Idea[]>(() => {
     const persistedData = localStorage.getItem("IDEA_DATA");
-    const initialData = persistedData ? JSON.parse(persistedData) : [];
-    return initialData;
+    return persistedData ? JSON.parse(persistedData) : [];
   });
 
   useEffect(() => {
-    if (ideas.length > 0) {
-      localStorage.setItem("IDEA_DATA", JSON.stringify(ideas));
-    }
+    localStorage.setItem("IDEA_DATA", JSON.stringify(ideas));
   }, [ideas]);
 
-  const handleCreateIdea = (title?: string, description?: string) => {
-    const lazyUid = new Date().toISOString(); //Note: wouldn't fly in production, collision risks etc.
+  const handleCreateIdea = (title: string = '', description: string = '') => {
     const newIdea = {
-      uid: lazyUid,
+      uid: nanoid(),
       edited: "",
-      created: lazyUid.split("T")[0],
-      title: title || "",
-      description: description || "",
+      created: new Date().toISOString().split("T")[0],
+      title: title,
+      description: description,
     };
-    const updatedIdeas = [newIdea, ...ideas];
-    setIdeas(updatedIdeas);
+    setIdeas([newIdea, ...ideas]);
     toast.success("Successfully created idea!");
   };
 
@@ -49,11 +45,7 @@ function App() {
     toast.success("Successfully deleted idea!");
   };
 
-  const handleUpdateIdea = (
-    index: number,
-    title: string,
-    description: string
-  ) => {
+  const handleUpdateIdea = ( index: number, title: string, description: string) => {
     const updatedData = [...ideas];
     updatedData[index] = {
       ...updatedData[index],
@@ -70,7 +62,7 @@ function App() {
     toast.success("Sort successfully applied!", { position: "top-center" });
   };
 
-  const sortIdeas = (data: Idea[], sortType: string) => {
+  const sortIdeas = (data: Idea[], sortType: SortType) => {
     switch (sortType) {
       case "alph":
         return data.sort((a, b) => a.title.localeCompare(b.title));
@@ -83,11 +75,11 @@ function App() {
           return new Date(dateA).getTime() - new Date(dateB).getTime();
         });
       default:
-        return data.slice();
+        return [...data];
     }
   };
 
-  const sortedIdeas = sortIdeas(ideas, sortType);
+  const sortedIdeas = sortIdeas(ideas, sortType);  
 
   return (
     <div className="h-full">
@@ -95,7 +87,6 @@ function App() {
         handleCreateIdea={handleCreateIdea}
         handleSortIdeas={handleSortIdeas}
       />
-
       <main className="flex justify-center flex-row flex-wrap gap-8 pb-10 pt-24 mx-10">
         {sortedIdeas.length > 0 ? (
           sortedIdeas.map((item, index) => (
@@ -115,17 +106,16 @@ function App() {
             />
           ))
         ) : (
-          <div className="flex flex-col space-y-4 h-[30vh] md:h-[70vh] text-center items-center justify-center">
-            <p className="text-base md:text-xl italic tracking-wider underline">
+          <section className="flex flex-col space-y-4 h-[30vh] md:h-[70vh] text-center items-center justify-center">
+            <h2 className="text-base md:text-xl italic tracking-wider underline">
               Welcome to your IdeaBoard
-            </p>
+            </h2>
             <p className="text-sm italic tracking-wider">
               you don't have any ideas yet...
             </p>
-          </div>
+          </section>
         )}
       </main>
-
       <Footer />
     </div>
   );
