@@ -1,9 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "./components/theme/theme-provider.tsx";
-import ToasterProvider from "./lib/ToasterProvider.tsx";
+
+import "./globals.css";
+
+const ToasterProvider = () => {
+  return (
+    <Toaster
+      position="bottom-center"
+      toastOptions={{
+        style: {
+          background: "#333",
+          color: "#fff",
+          zIndex: 999,
+        },
+      }}
+    />
+  );
+};
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -11,5 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <App />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

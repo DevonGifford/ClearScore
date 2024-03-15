@@ -1,7 +1,5 @@
-// -  Pushing the Fake ideas to local storage for tempIdeaData.json development & testing
-import tempData from "../assets/FakeIdeaData.json";
+import mockIdeaData from "../assets/mockIdeaData.json";
 
 export default function generateIdeas() {
-  const fakeIdeaData = tempData;
-  localStorage.setItem("ideas", JSON.stringify(fakeIdeaData));
+  localStorage.setItem("IDEA_DATA", JSON.stringify(mockIdeaData));
 }
