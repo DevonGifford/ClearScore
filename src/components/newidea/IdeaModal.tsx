@@ -31,7 +31,7 @@ export default function Modal({ open, onClose, children }: ModalProps) {
           className="bg-secondary h-6 w-6 absolute top-3 right-3 p-1 rounded-lg text-gray-400 hover:bg-inherit"
           data-testid="close-modal-button"
         >
-          <X size={16} className="transition duration-400 hover:scale-125"  />
+          <X size={16} className="transition duration-400 hover:scale-125" />
         </Button>
         {children}
       </div>

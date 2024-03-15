@@ -1,72 +1,72 @@
 [
   {
-    "unique_key": "idea_0",
-    "title": "Smart Recipe Generator",
+    "uid": "idea_0",
+    "title": "SmartFridge Recipe Generator",
     "description": "An AI-powered app that suggests personalized recipes based on the ingredients you have, dietary preferences, and cooking skill level.",
-    "created_at": "2022-03-10",
-    "edited_at": ""
+    "created": "2024-03-10",
+    "edited": ""
   },
   {
-    "unique_key": "idea_1",
-    "title": "Virtual Fitness Buddy",
+    "uid": "idea_1",
+    "title": "AI Virtual Fitness Companion",
     "description": "A virtual fitness companion that uses augmented reality to guide users through workouts, provide real-time feedback, and track progress.",
-    "created_at": "2022-04-09",
-    "edited_at": ""
+    "created": "2023-04-09",
+    "edited": ""
   },
   {
-    "unique_key": "idea_2",
+    "uid": "idea_2",
     "title": "Language Learning Through VR",
     "description": "A virtual reality platform that immerses users in foreign language environments, making language learning more interactive and engaging.",
-    "created_at": "2022-04-08",
-    "edited_at": ""
+    "created": "2024-04-08",
+    "edited": "2024-04-08"
   },
   {
-    "unique_key": "idea_3",
+    "uid": "idea_3",
     "title": "Garden Automation System",
     "description": "Automated gardening system that monitors soil conditions, weather forecasts & plant growth to optimize watering, fertilization & care.",
-    "created_at": "2022-03-07",
-    "edited_at": ""
+    "created": "2023-11-07",
+    "edited": ""
   },
   {
-    "unique_key": "idea_4",
+    "uid": "idea_4",
     "title": "AI-Powered Personal Stylist",
     "description": "A fashion app that suggests outfits and styles based on user preferences, body type, and current fashion trends using machine learning.",
-    "created_at": "2022-02-06",
-    "edited_at": ""
+    "created": "2024-02-06",
+    "edited": ""
   },
   {
-    "unique_key": "idea_5",
-    "title": "Virtual Reality Tourism",
+    "uid": "idea_5",
+    "title": "Virtual Reality Local Tourism",
     "description": "A virtual tourism platform that allows users to explore famous landmarks and travel destinations around the world through immersive VR.",
-    "created_at": "2022-03-12",
-    "edited_at": ""
+    "created": "2023-08-12",
+    "edited": ""
   },
   {
-    "unique_key": "idea_6",
-    "title": "Mindful Productivity App",
+    "uid": "idea_6",
+    "title": "Mental Health Productivity App",
     "description": "An app that combines task management with mindfulness techniques, helping users stay focused, reduce stress, and accomplish their goals.",
-    "created_at": "2022-03-13",
-    "edited_at": ""
+    "created": "2023-09-13",
+    "edited": ""
   },
   {
-    "unique_key": "idea_7",
+    "uid": "idea_7",
     "title": "AR-Based Learning for Kids",
     "description": "An AR learning app that offers interactive lessons, quizzes, and educational games to make learning engaging and fun for children.",
-    "created_at": "2022-04-14",
-    "edited_at": "2022-04-14"
+    "created": "2022-04-14",
+    "edited": "2023-04-24"
   },
   {
-    "unique_key": "idea_8",
+    "uid": "idea_8",
     "title": "AI-Enhanced Home Security",
     "description": "A home security system using AI to differentiate between normal events and potential threats, sending alerts & enhancing overall safety.",
-    "created_at": "2022-04-02",
-    "edited_at": "2022-04-13"
+    "created": "2022-04-02",
+    "edited": "2024-04-13"
   },
   {
-    "unique_key": "idea_9",
+    "uid": "idea_9",
     "title": "Personalized Meditation Guide",
     "description": "A meditation app that uses AI to analyze users stress levels and mood, and then provides customized meditation sessions.",
-    "created_at": "2022-04-01",
-    "edited_at": "2022-04-14"
+    "created": "2023-04-01",
+    "edited": "2023-04-14"
   }
 ]

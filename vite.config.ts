@@ -1,14 +1,14 @@
 import path from "path";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   plugins: [react()],
-  test: { 
-    reporters: ['html', 'default'],
+  test: {
+    reporters: ["html", "default"],
     globals: true,
-    environment: 'happy-dom',
-    setupFiles: ['src/setupTest.ts']
+    environment: "happy-dom",
+    setupFiles: ["src/setupTest.ts"],
   },
   resolve: {
     alias: {

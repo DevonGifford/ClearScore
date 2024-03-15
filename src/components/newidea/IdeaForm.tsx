@@ -1,21 +1,27 @@
 import * as z from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "./ui/button";
+import { toast } from "react-hot-toast";
+import { Button } from "../ui/button";
 import { Wand2 } from "lucide-react";
 import generateIdeas from "@/lib/FakeGenerate";
-import { toast } from "react-hot-toast";
-import { formSchema } from "@/lib/zodFormSchema";
+
+export const formSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  description: z
+    .string()
+    .min(1, "Description is required")
+    .max(140, "Maximum of 140 characters"),
+});
 
 type FormSchemaType = z.infer<typeof formSchema>;
 
 interface IdeaFormProps {
   closeFormModal: () => void;
-  handleCreateIdea: (title:string, description:string) => void;
+  handleCreateIdea: (title: string, description: string) => void;
 }
 
 const IdeaForm = ({ closeFormModal, handleCreateIdea }: IdeaFormProps) => {
-  //✅ Form validation
   const {
     register,
     handleSubmit,
@@ -24,37 +30,37 @@ const IdeaForm = ({ closeFormModal, handleCreateIdea }: IdeaFormProps) => {
   } = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
   });
-  //✅ Submit New Idea
+
   const onSubmit: SubmitHandler<FormSchemaType> = (formData) => {
     const { title, description } = formData;
     handleCreateIdea(title, description);
     reset();
     closeFormModal();
-  }
-  //✅ Generate Fake Ideas
+  };
+
   const generateFakeIdeas = () => {
-    toast.success("Fake Ideas Successfully Generated");
     generateIdeas();
     closeFormModal();
-    window.location.reload();
+    toast.success("Fake Ideas Successfully Generated");
+    //FIXME: will either need to setup an event emitter or refactor this feature.    
+    //NOTE: temp workaround.
+    window.location.reload(); 
   };
 
   return (
-    <div className="h-full p-1 md:p-4 md:space-y-2 max-w-3xl mx-auto">
-      {/* HEADER */}
+    <div className="h-full p-1 md:p-4 md:space-y-2 max-w-3xl mx-auto z-999">
       <div className="md:space-y-2 w-full pb-4">
         <h3 className="md:text-xl font-bold">Create Your New Idea Card</h3>
         <p className="text-xs text-muted-foreground md:pb-2">
           Capture your brilliant ideas
         </p>
       </div>
-      {/* Form Inputs */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="space-y-2 md:space-y-8 pb-10"
       >
         <div className="flex flex-col space-y-2 md:space-y-5">
-          {/* HEADING  */}
+          {/* TITLE */}
           <div>
             <label htmlFor="title">
               <h5 className="text-sm md:text-base font-medium">The Title</h5>
@@ -67,10 +73,14 @@ const IdeaForm = ({ closeFormModal, handleCreateIdea }: IdeaFormProps) => {
               id="title"
               className=" bg-slate-300 text-black text-xs sm:text-sm rounded-lg block w-full p-2.5"
               placeholder="Your title goes here"
+              autoFocus
               {...register("title")}
             />
             {errors.title && (
-              <span className="text-xs text-center md:text-base text-red-800 block mt-1">{errors.title?.message}</span>)}
+              <span className="text-xs text-center md:text-base text-red-800 block mt-1">
+                {errors.title?.message}
+              </span>
+            )}
           </div>
           {/* DESCRIPTION */}
           <div>
@@ -89,10 +99,14 @@ const IdeaForm = ({ closeFormModal, handleCreateIdea }: IdeaFormProps) => {
               placeholder="Your description goes here"
               {...register("description")}
             />
-            {errors.description && (<span className="text-xs text-center md:text-base text-red-800 block mt-1">{errors.description?.message}</span>)}
+            {errors.description && (
+              <span className="text-xs text-center md:text-base text-red-800 block mt-1">
+                {errors.description?.message}
+              </span>
+            )}
           </div>
         </div>
-        {/* SUBMIT BUTTON */}
+
         <div className="w-full flex justify-center pt-2">
           <Button
             size="lg"
@@ -104,7 +118,7 @@ const IdeaForm = ({ closeFormModal, handleCreateIdea }: IdeaFormProps) => {
           </Button>
         </div>
       </form>
-      {/* GENERATE FAKE IDEA'S BUTTON */}
+
       <div className="w-full flex justify-center">
         <Button
           size="sm"
